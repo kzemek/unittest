@@ -1,5 +1,9 @@
 
 defmodule Unittest do
+  @moduledoc ~S"""
+  This module help you write tests.
+  Unittest provider useful functions from unittest framework of Python
+  """
 
   def is(term, :atom), do: is_atom(term)
   def is(term, :int), do: is_integer(term)
@@ -17,9 +21,7 @@ defmodule Unittest do
   def is(term, :bool), do: is_boolean(term)
   def is(_, _), do: :unknow_term
   def is(term, :function), do: is_function(term)
-  def is(term, arity, :function) do
-     is_function(term, arity)
-  end
+  def is(term, arity, :function), do: is_function(term, arity)
 
   def is_empty([]), do: true
   def is_empty({}), do: true

@@ -7,7 +7,19 @@ defmodule Unittest.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: deps(),
+     description: "Unittest is a unit testing library for Elixir was
+     originally inspired by Python standard testing framework.",
+     package: package()
+   ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Likid Geimfari"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/lk-geimfari/unittest"}
+    ]
   end
 
   # Configuration for the OTP application

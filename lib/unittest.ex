@@ -19,9 +19,9 @@ defmodule Unittest do
   def is(term, :list), do: is_list(term)
   def is(term, :bin), do: is_binary(term)
   def is(term, :bool), do: is_boolean(term)
-  def is(_, _), do: :unknow_term
   def is(term, :function), do: is_function(term)
   def is(term, arity, :function), do: is_function(term, arity)
+  def is(_, _), do: :unknow_term
 
   def is_empty([]), do: true
   def is_empty({}), do: true

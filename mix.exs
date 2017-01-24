@@ -1,13 +1,15 @@
 defmodule Unittest.Mixfile do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [app: :unittest,
-     version: "0.1.0",
+     version: @version,
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps(),
+     source_url: "https://github.com/lk-geimfari/unittest",
      description: "Unittest is a unit testing library for Elixir was
      originally inspired by Python standard testing framework.",
      package: package()
@@ -16,6 +18,7 @@ defmodule Unittest.Mixfile do
 
   defp package do
     [
+      files: ["lib", "mix.exs"],
       maintainers: ["Likid Geimfari"],
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/lk-geimfari/unittest"}
@@ -28,9 +31,5 @@ defmodule Unittest.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger]]
-  end
-
-  defp deps do
-    []
   end
 end

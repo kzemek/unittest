@@ -30,37 +30,24 @@ defmodule UnittestTest do
     assert is(true, :bool)
     assert is([:one, :two], :list)
 
-    pid = spawn(fn -> :ok end)
-    assert is(pid, :pid)
-
-    function = fn() -> :something end
-    assert is(function, :function)
+    assert is(spawn(fn -> :ok end), :pid) 
+    assert is(fn() -> :nicht end, :function)
     
     # Returns true if term is a function that can be applied
     # with arity number of arguments; otherwise returns false.
-    function = fn(_, _) -> :something end
-    assert is(function, 2, :function)
+    assert is(fn(_, _) -> :ja end, 2, :function)
   end
 
   test "equal" do
     assert equal(:term, :term)
-    assert equal("term", "term")
   end
 
   test "greater" do
-    assert greater(22, 21)
-    assert greater(:atom, 22)
-    assert greater(fn() -> :ok end, :atom)
-    assert greater(spawn(fn -> :ok end), fn() -> :ok end)
-    assert greater({:tuple, "tuple"}, spawn(fn -> :ok end))
-    assert greater(%{"one" => :one, 2 => :two}, {:tuple, "tuple"})
     assert greater([:atom, "list"], %{"one" => :one, 2 => :two})
-    assert greater(<<1 :: size(1)>>, [:atom, "list"])
   end
 
   test "is not" do
-    some_var = "not an atom"
-    assert is_not(some_var, :atom)
+    assert is_not("an atom", :atom)
   end
 
   test "great or equal" do
@@ -79,7 +66,6 @@ defmodule UnittestTest do
 
   test "less" do
     assert less(245, 567)
-    assert less(%{"one" => :one}, [:atom, "list"])
   end
 
   test "less or equal" do
@@ -87,10 +73,8 @@ defmodule UnittestTest do
   end
 
   test "is empty" do
-    assert is_empty([])
-    assert is_empty({})
-    assert is_empty(%{})
-    assert is_empty("")
+    some_list = [:atom] -- [:atom]
+    assert is_empty(some_list)
   end
 
 end

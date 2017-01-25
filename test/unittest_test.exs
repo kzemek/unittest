@@ -2,6 +2,8 @@ defmodule UnittestTest do
   use ExUnit.Case
   import Unittest
 
+  doctest Unittest
+
   test "is" do
     assert is(:atom, :atom)
     assert is(666, :int)

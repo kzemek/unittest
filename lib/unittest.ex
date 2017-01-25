@@ -1,8 +1,44 @@
 
 defmodule Unittest do
   @moduledoc ~S"""
-  This module help you write tests.
-  Unittest provider useful functions from unittest framework of Python
+  Unittest is a unit testing library for Elixir was originally inspired by Python
+  standard testing framework. This is a port of unittest Python library for Elixir.
+
+  Unittest provider useful functions from unittest framework of Python.
+
+  Examples:
+    iex> Unittest.is(:atom, :atom)
+    true
+
+    iex> Unittest.is_empty([])
+    true
+
+    iex> Unittest.is_not("an atom", :atom)
+    true
+
+    iex> Unittest.is_not_nil(:atom)
+    true
+
+    iex> Unittest.in_([:atom, :mota], :mota)
+    true
+
+    iex> Unittest.not_in(["string", :atom, 512], 256)
+    true
+
+    iex> Unittest.equal(:a, :a)
+    true
+
+    iex> Unittest.greater(512, 256)
+    true
+
+    iex> Unittest.greater_equal(256, 256)
+    true
+
+    iex> Unittest.less(512, 513)
+    true
+
+    iex> Unittest.less_equal(513, 514)
+    true
   """
 
   def is(term, :atom), do: is_atom(term)

@@ -8,9 +8,6 @@
 
 **Unittest** is a unit testing library for Elixir was originally inspired by Python standard testing framework. This is a port of unittest Python library for Elixir. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections.
 
-#### Atention
-This is an **experimental** project and it's mean that we do not guarantee stability.
-
 #### Usage
 
 ```elixir
@@ -105,3 +102,9 @@ def deps do
   [{:unittest, "~> 0.1.0"}]
 end
 ```
+
+#### Atention
+This is an **experimental** project and it's mean that we do not guarantee stability.
+
+#### License
+Unittest is licensed under the MIT License. See [LICENSE](/LICENSE) for more information.

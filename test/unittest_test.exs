@@ -79,5 +79,4 @@ defmodule UnittestTest do
     assert is_empty(%{})
     assert is_empty("")
   end
-
 end

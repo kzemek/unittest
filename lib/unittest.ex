@@ -42,4 +42,16 @@ defmodule Unittest do
   def greater_equal(a, b), do: a >= b
   def less(a, b), do: a < b
   def less_equal(a, b), do: a <= b
+
+  def raises, do: raise NotImplementedError
+  def almost_equal, do: raise NotImplementedError
+  def not_almost_qual, do: raise NotImplementedError
+  def set_equal, do: raise NotImplementedError
+  def list_equal, do: raise NotImplementedError
+  def count_equal, do: raise NotImplementedError
+  def tuple_equal, do: raise NotImplementedError
+end
+
+defmodule NotImplementedError do
+  defexception message: "This feature not implemented yet."
 end

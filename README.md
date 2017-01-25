@@ -14,14 +14,14 @@ Python:
 ```python
 # ...
 def test_something(self):
-    self.assertEqual(22, 23 - 1)
+    self.assertEqual(22, 23-1)
 ```
 
 Elixir:
 ```elixir
 # ...
 test "something" do
-  assert equal(22, 23 - 1)
+  assert equal(22, 23-1)
 end
 ```
 

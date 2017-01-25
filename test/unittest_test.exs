@@ -25,6 +25,8 @@ defmodule UnittestTest do
 
     function = fn(_, _) -> :something end
     assert is(function, 2, :function)
+
+    assert is(:something, :object) == {:error, :unknow_type}
   end
 
   test "equal" do

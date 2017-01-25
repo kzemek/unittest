@@ -25,7 +25,7 @@ test "something" do
 end
 ```
 
-#### Usage
+### Usage
 
 ```elixir
 defmodule UnittestTest do
@@ -82,8 +82,8 @@ def deps do
 end
 ```
 
-#### Atention
+### Atention
 This is an **experimental** project and it's mean that we do not guarantee stability.
 
-#### License
+### License
 Unittest is licensed under the MIT License. See [LICENSE](/LICENSE) for more information.

@@ -8,6 +8,22 @@
 
 **Unittest** is a unit testing library for Elixir was originally inspired by Python standard testing framework. This is a port of unittest Python library for Elixir. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections.
 
+API of `unittest` very similar to `unittest` of Python. In example below you can see how to check equality of values:
+
+Python:
+```python
+# ...
+def test_something(self):
+    self.assertEqual(22, 23 - 1)
+```
+
+Elixir:
+```elixir
+test "something" do
+  assert equal(22, 23 - 1)
+end
+```
+
 #### Usage
 
 ```elixir
@@ -32,51 +48,29 @@ defmodule UnittestTest do
 
     assert is(spawn(fn -> :ok end), :pid) 
     assert is(fn() -> :nicht end, :function)
-    
-    # Returns true if term is a function that can be applied
-    # with arity number of arguments; otherwise returns false.
-    assert is(fn(_, _) -> :ja end, 2, :function)
   end
 
   test "equal" do
     assert equal(:term, :term)
   end
 
-  test "greater" do
-    assert greater([:atom, "list"], %{"one" => :one, 2 => :two})
-  end
-
   test "is not" do
     assert is_not("an atom", :atom)
   end
-
-  test "great or equal" do
-    assert greater_equal(22, 22)
-  end
-
-  test "in" do
-    list = [:atom, ["list"], 256]
-    assert in_(list, :atom)
-  end
-
+  
   test "not in" do
     list = [:atom, ["list"], 256]
     assert not_in(list, {:atom})
+  end
+  
+  test "greater" do
+    assert greater([:atom, "list"], %{"one" => :one, 2 => :two})
   end
 
   test "less" do
     assert less(245, 567)
   end
-
-  test "less or equal" do
-    assert less_equal(22, 32)
-  end
-
-  test "is empty" do
-    some_list = [:atom] -- [:atom]
-    assert is_empty(some_list)
-  end
-
+  
 end
 ```
 

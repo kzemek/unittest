@@ -56,11 +56,6 @@ defmodule UnittestTest do
     assert greater_equal(22, 22)
   end
 
-  test "in" do
-    list = [:atom, ["list"], 256]
-    assert in_(list, :atom)
-  end
-
   test "not in" do
     list = [:atom, ["list"], 256]
     assert not_in(list, {:atom})
